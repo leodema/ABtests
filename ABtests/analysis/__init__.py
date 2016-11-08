@@ -1,1 +1,1 @@
-from .analisys import Ttest
+from .analisys import _Ttest_builder

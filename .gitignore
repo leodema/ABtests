@@ -1,1 +1,6 @@
 .idea/
+__pycache__/
+*.pyc
+ABtests.egg-info/
+build/
+dist/

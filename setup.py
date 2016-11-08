@@ -2,7 +2,7 @@ from __future__ import print_function
 import sys
 import io
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
 from ABtests import stats
@@ -52,10 +52,12 @@ setup(
     cmdclass={'test': PyTest},
     description='Automated AB tests',
     long_description=long_description,
-    packages=['ABtests'],
+    packages=find_packages(),
     include_package_data=True,
+    url='https://github.com/leodema/ABtests',
+    maintainer_email='leodema@users.noreply.github.com',
     platforms='any',
-    test_suite='stats.tests.test_sandman',
+    test_suite='ABtests.tests',
     classifiers=[
         'Programming Language :: Python',
         'Development Status :: 2 - Pre-Alpha',

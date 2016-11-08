@@ -1,3 +1,8 @@
+'''
+These functions are almost identical of the ones in statsmodels
+
+[1] statsmodels.sourceforge.net
+'''
 import numpy as np
 import pandas as pd
 
@@ -12,7 +17,7 @@ class StatPower(object):
         self.n_observations = n_observations
 
 
-class Ttest(object):
+class _Ttest_builder(object):
     def plot(self):
         myplot(self.a, self.b)
 
@@ -51,12 +56,12 @@ class Ttest(object):
             myplot(self.a, self.b)
 
 
-class TtestIndip(Ttest):
-    def __init__(self, a, b, equal_var):
-        self.a = a
-        self.b = b
-        self.mean_a = a.mean()
-        self.mean_b = b.mean()
+class TtestIndip(_Ttest_builder):
+    def __init__(self, a, b, equal_var=True):
+        self.a = np.array(a)
+        self.b = np.array(b)
+        self.mean_a = self.a.mean()
+        self.mean_b = self.b.mean()
         self.equal_var = equal_var
         self.statistic, self.p_value = stats.ttest_ind(self.a, self.b, equal_var=self.equal_var)
         self.difference_means = self.mean_a - self.mean_b
@@ -64,9 +69,9 @@ class TtestIndip(Ttest):
         self.power = calculate_power(difference=self.difference_means_perc, n_observation=len(self.b))
 
 
-class Ttest1Sample(Ttest):
+class Ttest1Sample(_Ttest_builder):
     def __init__(self, population_mean, b):
-        self.b = b
+        self.b = np.array(b)
         self.population_mean = population_mean
         self.mean_a = population_mean
         self.mean_b = b.mean()

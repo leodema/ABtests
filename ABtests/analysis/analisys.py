@@ -81,20 +81,6 @@ class Ttest1Sample(_Ttest_builder):
         self.difference_means_perc = self.difference_means / self.mean_a
         self.power = calculate_power(difference=self.difference_means_perc, n_observation=len(self.b))
 
-#
-# def ttest_ind_analysis(a, b, equal_var=True, significance_level=0.05):
-#     print('T-test for two indipendent samples with {}'
-#           .format('equal variance' if equal_var is True else 'unequal Variance'))
-#     p_value, statistic = stats.ttest_ind(a, b, equal_var=equal_var)
-#     print('p-value: {p_value:.4f}, statistic {statistic:.4f} '.format(p_value=p_value,
-#                                                                       statistic=statistic))
-#     myplot(a, b)
-#     diff = (np.mean(a) - np.mean(b)) / np.mean(a)
-#     power = calculate_power(difference=diff, n_observation=len(b))
-#     print('Power: {power:.4f}'.format(power=power))
-#     return p_value, statistic, power
-
-
 def test_proportions():
     print(stats.chi_square_test([16, 18, 16, 14, 12, 12], [16, 16, 16, 16, 16, 8]))
     return (stats.chi_square_test(0.2, 0.3))

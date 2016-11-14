@@ -6,7 +6,7 @@ pip install ABtests
 
 Usage example:
 
-```
+```python
 import numpy as np
 from  ABtests.analysis import TtestIndip
 

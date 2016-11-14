@@ -57,6 +57,11 @@ class _Ttest_builder(object):
 
 
 class TtestIndip(_Ttest_builder):
+    """
+    Calculate the main statistics for a sample and the population mean.
+    >>> mean = 1
+    >>> sample = np.random.normal(mean, 0.1, 500)
+    """
     def __init__(self, a, b, equal_var=True):
         self.a = np.array(a)
         self.b = np.array(b)
@@ -70,6 +75,11 @@ class TtestIndip(_Ttest_builder):
 
 
 class Ttest1Sample(_Ttest_builder):
+    """
+    Calculate the main statistics for a sample and the population mean.
+    >>> mean = 1
+    >>> sample = np.random.normal(mean, 0.1, 500)
+    """
     def __init__(self, population_mean, b):
         self.b = np.array(b)
         self.population_mean = population_mean

@@ -21,7 +21,8 @@ class TestAnalysis2samples(_TestAnalysis):
 
     def test_analysis(self):
         my_test = TtestIndip(np.array(self.a), np.array(self.b), equal_var=False)
-        my_test.report_verbose()
+        my_test.report_verbose(plot=True)
+        self.assertEqual(round(p_value_expected, 9), round(p_value, 9))
 
     def test_analysis(self):
         my_test = TtestIndip(np.array(self.a), np.array(self.b), equal_var=False)

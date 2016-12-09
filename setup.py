@@ -41,13 +41,14 @@ setup(
     license='Apache Software License',
     author='Leonardo De Marchi',
     tests_require=['ABtests'],
-    install_requires=['matplotlib==1.5.3',
-                      'numpy==1.11.2',
-                      'pandas==0.19.0',
-                      'scipy==0.18.1',
-                      'seaborn==0.7.1',
-                      'setuptools==28.3.0',
-                      'statsmodels==0.8.0rc1',
+    install_requires=['matplotlib>=1.5.3'
+                      'numpy>=1.11.2'
+                      'pandas>=0.19.0'
+                      'scipy>=0.18.1'
+                      'seaborn>=0.7.1'
+                      'setuptools>=28.3.0'
+                      'pytest>=3.0.3'
+                      'statsmodels>=0.8.0rc1'
                       ],
     cmdclass={'test': PyTest},
     description='Automated AB tests',

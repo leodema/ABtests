@@ -1,2 +1,2 @@
-from .analisys import _Ttest_builder
-from .analisys import Ttest1Sample, TtestIndip
+from .analysis import _Ttest_builder
+from .analysis import Ttest1Sample, TtestIndip

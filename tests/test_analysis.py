@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 from scipy.stats import ttest_ind, ttest_1samp
 
-from ABtests.analysis.analisys import TtestIndip, Ttest1Sample
+from ABtests.analysis.analysis import TtestIndip, Ttest1Sample
 
 
 class _TestAnalysis(unittest.TestCase):

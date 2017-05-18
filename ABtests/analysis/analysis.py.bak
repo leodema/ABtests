@@ -35,22 +35,22 @@ class _Ttest_builder(object):
         print(report_table)
 
     def report_verbose(self, plot=False, significance=0.05):
-        print(('-' * 20))
-        print(('T-test for two independent samples with {}'
-              .format('equal variance' if self.equal_var is True else 'unequal Variance\n')))
-        print(('p-value: {p_value:.4f}, statistic {statistic:.4f} '.format(p_value=self.p_value,
-                                                                          statistic=self.statistic)))
+        print('-' * 20)
+        print('T-test for two independent samples with {}'
+              .format('equal variance' if self.equal_var is True else 'unequal Variance\n'))
+        print('p-value: {p_value:.4f}, statistic {statistic:.4f} '.format(p_value=self.p_value,
+                                                                          statistic=self.statistic))
         if self.p_value > significance:
-            print(('Not statistically significant at {significance}\n'.format(significance=significance)))
+            print('Not statistically significant at {significance}\n'.format(significance=significance))
         else:
-            print(('Statistically significant at {significance}\n'.format(significance=significance)))
+            print('Statistically significant at {significance}\n'.format(significance=significance))
 
-        print(('Power: {power:.4f}'.format(power=self.power)))
+        print('Power: {power:.4f}'.format(power=self.power))
 
         if self.power > 0.8:
-            print(('Enough power\n'.format(significance=significance)))
+            print('Enough power\n'.format(significance=significance))
         else:
-            print(('Not enough power\n'.format(significance=significance)))
+            print('Not enough power\n'.format(significance=significance))
 
         if plot:
             myplot(self.a, self.b)
@@ -92,5 +92,5 @@ class Ttest1Sample(_Ttest_builder):
         self.power = calculate_power(difference=self.difference_means_perc, n_observation=len(self.b))
 
 def test_proportions():
-    print((stats.chi_square_test([16, 18, 16, 14, 12, 12], [16, 16, 16, 16, 16, 8])))
+    print(stats.chi_square_test([16, 18, 16, 14, 12, 12], [16, 16, 16, 16, 16, 8]))
     return (stats.chi_square_test(0.2, 0.3))

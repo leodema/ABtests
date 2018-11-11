@@ -1,10 +1,14 @@
-This software aims to automate tests analysis
+# ABtests
+
+This software aims to provide an easy-to-use interface to perform AB tests analysis.
 
 
-Installation:
+## Installation
+```
 pip install ABtests
+```
 
-Usage example:
+## Usage example:
 
 ```python
 import numpy as np
